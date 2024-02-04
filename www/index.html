@@ -1,0 +1,586 @@
+<!DOCTYPE HTML>
+<html lang="cs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>eDoklady</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">    
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-dark" data-highlight="highlight-blue" data-gradient="body-default" style="background-color:#0d6efd!important;">
+    
+<div id="preloader"><div class="spinner-border color-blue-light" role="status"></div></div>
+    
+<div id="page">
+<style type="text/css">#walkthrough-slider .splide__pagination{padding-bottom:calc(185px + (env(safe-area-inset-bottom))*1.1)!important;}
+.card-bottom{bottom:calc(150px + (env(safe-area-inset-bottom))*1.1)!important;}
+.cover-button-bottom{left:20px!important;right:20px!important;}
+.page-content{background-color:#254e80;}</style>
+    <div class="page-content pb-0">
+        <div class="d-flex flex-column align-items-center text-center cover-button-top">
+            <img src="images/ic_launcher.png" class="rounded-xl btn-xs btn-center-s" style="width:90px;" id="logo">
+            <a style="font-size:19px;color:#FFF;display:block;" id="eDoklady">eDoklady</a>
+        </div>
+        <div class="d-flex flex-column align-items-center text-center pt-2 cover-button-top" id="nova_era" style="display:none!important;padding-top:11rem!important;width:auto;margin-left:-130px;">
+            <div style="padding-top:14px;color:#FFF" class="font-500 font-20">nová éra prokazování totožnosti</div>
+            <div style="padding-top:11px;color:#FFF" class="font-500 font-14" onclick="openWeb('https://edoklady.gov.cz/')">Chci vědět více</div>
+        </div>
+
+        <a href="#" data-toggle-theme class="show-on-theme-light cover-button-top btn btn-xs rounded-xl shadow-huge btn-center-s font-900 bg-green-dark" style="display:none;"><i class="fa fa-moon me-3"></i>TMAVÝ REŽIM</a>
+        <a href="#" data-toggle-theme class="show-on-theme-dark cover-button-top btn btn-xs rounded-xl shadow-huge btn-center-s font-900 bg-green-dark" style="display:none;"><i class="fa fa-sun me-3"></i>SVĚTLÝ REŽIM</a>
+
+        <a href="#" data-toast="inactivity_logout_snackbar" style="display:none!important;" id="inactivity_logout_snackbar_trigger"></a>
+
+        <a data-menu="settings-changepin" href="#" id="create_pin"></a>
+        <a data-menu="settings-verifypin" href="#" id="verifypin"></a>
+        <style type="text/css">.card-overlay{margin-top:65px!important;}</style>
+        <div class="splide single-slider slider-no-arrows" id="walkthrough-slider">
+            <div class="splide__track" id="slider">
+                <div class="splide__list">
+                    <div class="splide__slide">
+                        <div data-card-height="cover" class="card pb-5">
+                            <div class="card-bottom" style="padding-left:15px;">
+                                <h1 class="font-700 font-25 mb-0">Občanka vždy po ruce</h1>
+                                <br/>
+                                <p class="color-theme mb-5" style="padding-bottom:11rem!important;">
+                                     Už dříve se do mobilu přestěhovaly platební a věrnostní karty, teď i občanka.
+                                </p>
+                                <p class="pb-4"></p>
+                            </div>
+                            <div class="card-overlay bg-18" style="height:40vh!important"></div>
+                        </div>
+                    </div>
+                    <div class="splide__slide">
+                        <div data-card-height="cover" class="card pb-5">
+                            <div class="card-bottom" style="padding-left:15px;">
+                                <h1 class="font-700 font-25 mb-0">Maximální soukromí</h1>
+                                <br/>
+                                <p class="color-theme mb-5" style="padding-bottom:11rem!important;">
+                                    Vždy předáváte pouze konkrétní vyžádané údaje, ne celou občanku. Co protistrana vidět nemusí, to neuvidí.
+                                </p>
+                                <p class="pb-4"></p>
+                            </div>
+                            <div class="card-overlay bg-20" style="height:40vh!important"></div>
+                        </div>
+                    </div>
+                    <div class="splide__slide">
+                        <div data-card-height="cover" class="card pb-5">
+                            <div class="card-bottom" style="padding-left:15px;">
+                                <h1 class="font-700 font-25 mb-0">Rychlé ověření totožnosti</h1>
+                                <br/>
+                                <p class="color-theme mb-5" style="padding-bottom:11rem!important;">
+                                    Navážete spojení předložením/naskenováním QR kódu a údaje bezpečně nasdílíte online nebo offline přes bluetooth.
+                                </p>
+                                <p class="pb-4"></p>
+                            </div>
+                            <div class="card-overlay bg-21" style="height:40vh!important"></div>
+                        </div>
+                    </div>
+                    <div class="splide__slide">
+                        <div data-card-height="cover" class="card pb-5">
+                            <div class="card-bottom" style="padding-left:15px;">
+                                <h1 class="font-700 font-25 mb-0">1 aplikace ověřovatele i občana</h1>
+                                <br/>
+                                <p class="color-theme mb-5" style="padding-bottom:11rem!important;">
+                                    Aplikace v sobě má funkce nejen pro občany, ale i pro ověřovatele. Ti si tedy nemusejí instalovat speciální aplikaci.
+                                </p>
+                                <p class="pb-4"></p>
+                            </div>
+                            <div class="card-overlay bg-28" style="height:40vh!important"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Outslide Splide Track
+            <div class="cover-button-bottom"><a href="index.html" class="btn btn-xl rounded-s shadow-xl btn-full bg-white font-900 text button-m" onclick="start();"><img src="images/nia.svg"/>Registrovat se<br/><sub>Pomocí Identity občana</sub></a></div>-->
+        </div>
+
+        <a href="#" class="cover-button-bottom btn btn-xl rounded-s btn-full bg-white font-900 text d-flex" onclick="document.getElementById('verifypin').click();biometrics();" id="login_verify" style="display:none!important;padding: 15px 17px !important;">
+            <div class="me-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 448 512" style="fill:#4A89DC;margin-top:6px;margin-left:8px;"><!--! Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M336 128a112 112 0 1 0 -224 0 112 112 0 1 0 224 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM16 482.3c0 7.6 6.1 13.7 13.7 13.7H418.3c7.6 0 13.7-6.1 13.7-13.7C432 392.7 359.3 320 269.7 320H178.3C88.7 320 16 392.7 16 482.3zm-16 0C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+            </div>
+            <div>
+                <strong class="color-blue-dark font-16 d-block mb-n2 pb-2" id="profile_name">%fname%</strong>
+                <span class="font-11 d-block" style="color:grey!important;margin-right:2rem!important;">Občan</span>
+            </div>
+            <div class="align-self-center ms-auto">
+                <i class="fa fa-arrow-right font-16 color-black-dark"></i>
+            </div>
+        </a>
+        <a href="#" class="cover-button-bottom btn  btn-xl rounded-s btn-full bg-white font-900 text d-flex" onclick="Callec();" id="callec" style="display:block!important;padding:15px 17px !important;">
+            <div>
+                <img src="images/nia.svg" class="me-3" style="width:46px;">
+            </div>
+            <div>
+                <strong class="color-blue-dark font-16 d-block mb-n2 pb-2">Registrovat se</strong>
+                <span class="font-11 d-block" style="color:grey!important;">Pomocí Indentity občana</span>
+            </div>
+            <div class="align-self-center ms-auto">
+                <i class="fa fa-arrow-right font-16 color-black-dark"></i>
+            </div>
+        </a>
+    </div>
+    <!-- End of Page Content--> 
+
+    <div id="inactivity_logout_snackbar" class="snackbar-toast rounded-m bg-green-dark fade hide" data-bs-delay="1500" data-bs-autohide="true" style="z-index:9999;"><i class="fa fa-check me-3"></i>Byli jste odhlášeni po delší neaktivitě</div>
+
+    <style>
+    .splide__pagination{margin:25px 23px 60px 0px!important;}
+    .rounded-circle-btn{border-radius:50%!important;text-align:center;width:50px;height:50px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0px 0px 7px 0px!important;}
+    .rounded-circle-btn span{width:100%;text-align:center;}
+    .nullmar{margin-bottom:0!important;--bs-gutter-x:0.5rem!important;flex-wrap:wrap;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;}
+    #pin,#pinz{font-size:27px!important;text-align:center;padding-left:15px;width:97%;color:#212529;background-color:#fff;border-color:#a5a5a5!important;outline:0;box-shadow:0 0 0 0.25rem rgba(13, 110, 253, 0.25);color:#000!important;}
+    #settings-changepin,#settings-changepin .card,#settings-verifypin,#settings-verifypin .card, #settings-unregister,#settings-unregister .card{background-color:#FFF!important;}
+    #settings-changepin h1,#settings-verifypin h1, #settings-unregister h1{color:black;}
+    #settings-changepin .divider,#settings-verifypin .divider {height:1px;display:block;background-color:rgba(0,0,0,0.05);margin-bottom:30px;}
+    #settings-changepin span:not(.badge):not(.schdate),#settings-verifypin span:not(.badge):not(.schdate),#settings-unregister span:not(.badge):not(.schdate){color:black!important;}
+    #pin_reset{color:#2362a2!important}
+    #settings-changepin .card-style,#settings-verifypin .card-style,#settings-unregister .card-style{box-shadow:none!important;}
+    </style>
+    <div id="settings-verifypin" class="menu menu-bg menu-box-right" data-menu-width="cover" data-menu-effect="menu-push-full">
+        <div class="card card-style mt-3 pb-2 bg-white color-black-dark">
+            <a href="#" class="close-menu header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+            <div class="menu-title">
+                <h1 class="font-20" style="text-align:center;font-size:19px;padding:20px 0px 3px 0px!important;" id="pin_head">Zadejete PIN</h1>
+            </div>
+        </div>
+
+        <div class="card card-style mt-4" style="padding-left:27px!important;margin:0!important;">
+            <input type="password" class="form-control" id="pinz">
+            <div id="error_pin" style="display:none;">
+                <div class="d-flex align-items-center justify-content-center pt-2"><div style="color:#9e3412;font-weight:400;"><img src="images/dialog_error.png" style="width:13px;" /> Chybně zadaný PIN, zadejte znovu</div></div>
+                <div class="d-flex align-items-center justify-content-center"><div style="color:#9e3412;font-weight:800;">Počet zbývajících pokusů: <a id="pokusy">2</a></div></div>
+            </div>
+        </div>
+
+        <div style="position:fixed;bottom:0px;left:0px;right:0px;">
+            <div class="card card-style mt-3">
+                <div class="content" style="margin:20px 15px 20px 60px!important;">
+                    <div class="nullmar">
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('1')"><span>1</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('2')"><span>2</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('3')"><span>3</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('4')"><span>4</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('5')"><span>5</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('6')"><span>6</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('7')"><span>7</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('8')"><span>8</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('9')"><span>9</span></button></div>
+                        <div class="col-4"><!--EMPTY SPACE--></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="z('0')"><span>0</span></button></div>
+                        <div class="col-4">
+                            <button class="rounded-circle-btn preload-img shadow-s rounded-s entered opacity-50" onclick="z('r')">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="max-width:22%;fill:grey;">
+                                    <path d="M544 128c0-17.7-14.3-32-32-32H205.3c-8.5 0-16.6 3.4-22.6 9.4L32 256 182.6 406.6c6 6 14.1 9.4 22.6 9.4H512c17.7 0 32-14.3 32-32V128zM512 64c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H205.3c-17 0-33.3-6.7-45.3-18.7L9.4 278.6c-6-6-9.4-14.1-9.4-22.6s3.4-16.6 9.4-22.6L160 82.7c12-12 28.3-18.7 45.3-18.7H512zM427.3 180.7c6.2 6.2 6.2 16.4 0 22.6L374.6 256l52.7 52.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L352 278.6l-52.7 52.7c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6L329.4 256l-52.7-52.7c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L352 233.4l52.7-52.7c6.2-6.2 16.4-6.2 22.6 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="#" class="close-menu" style="display:none!important;" id="close_pin_verify"></a>
+            <a href="#" class="btn btn-full btn-m mt-4 me-3 ms-3 mb-4 bg-highlight font-900 text-uppercase" onclick="pin_login();" id="pin_continue">Přihlásit se</a>
+            <a href="#" id="pin_reset" class="btn btn-full btn-m mt-4 me-3 ms-3 mb-4 font-500" data-menu="settings-unregister" style="font-size:15px!important;">Zapoměli jste přihlašovací PIN?</a>
+        </div>
+    </div>
+    <!-- Duplicate this and create a unique ID to create more settings panels -->
+    <div id="settings-changepin" class="menu menu-bg menu-box-right" data-menu-width="cover" data-menu-effect="menu-push-full">
+        <div class="card card-style mt-3 pb-2 bg-white color-black-dark">
+            <a href="#" class="close-menu header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+            <div class="menu-title">
+                <h1 class="font-20" style="text-align:center;font-size:19px;padding:20px 0px 3px 0px!important;" id="pin_head_create">Vytvořte PIN. Příště bude stačit k přihlášení.</h1>
+            </div>
+        </div>
+
+        <div class="card card-style mt-4" style="padding-left:27px!important;margin:0!important;">
+            <input type="password" class="form-control" id="pin" onchange="pin_check()">
+            <div>
+                <div class="d-flex align-items-center justify-content-center pt-2" style="font-size:10px;" id="pin_message_create"><span>! Zadejte 4-8 číslic, pro větší bezpečnost doporučujeme min. 6</span></div>
+            </div>
+            <div id="error_pin" style="display:none;">
+                <div class="d-flex align-items-center justify-content-center pt-2"><div style="color:#9e3412;font-weight:400;"><img src="images/dialog_error.png" style="width:13px;" /> Chybně zadaný PIN, zadejte znovu</div></div>
+                <div class="d-flex align-items-center justify-content-center"><div style="color:#9e3412;font-weight:800;">Počet zbývajících pokusů: <a id="pokusy_create">2</a></div></div>
+            </div>
+        </div>
+
+        <div style="position:fixed;bottom:0px;left:0px;right:0px;">
+            <div class="card card-style mt-3">
+                <div class="content" style="margin:20px 15px 20px 60px!important;">
+                    <div class="nullmar">
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('1')"><span>1</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('2')"><span>2</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('3')"><span>3</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('4')"><span>4</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('5')"><span>5</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('6')"><span>6</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('7')"><span>7</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('8')"><span>8</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('9')"><span>9</span></button></div>
+                        <div class="col-4"><!--EMPTY SPACE--></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('0')"><span>0</span></button></div>
+                        <div class="col-4">
+                            <button class="rounded-circle-btn preload-img shadow-s rounded-s entered opacity-50" onclick="i('r')">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="max-width:22%;fill:grey;">
+                                    <path d="M544 128c0-17.7-14.3-32-32-32H205.3c-8.5 0-16.6 3.4-22.6 9.4L32 256 182.6 406.6c6 6 14.1 9.4 22.6 9.4H512c17.7 0 32-14.3 32-32V128zM512 64c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H205.3c-17 0-33.3-6.7-45.3-18.7L9.4 278.6c-6-6-9.4-14.1-9.4-22.6s3.4-16.6 9.4-22.6L160 82.7c12-12 28.3-18.7 45.3-18.7H512zM427.3 180.7c6.2 6.2 6.2 16.4 0 22.6L374.6 256l52.7 52.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L352 278.6l-52.7 52.7c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6L329.4 256l-52.7-52.7c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L352 233.4l52.7-52.7c6.2-6.2 16.4-6.2 22.6 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="#" class="close-menu" style="display:none!important;" id="close_pin_verify"></a>
+            <a href="#" class="btn btn-full btn-m mt-4 me-3 ms-3 mb-4 bg-highlight font-900 text-uppercase" onclick="pin_create();" id="pin_continue">Pokračovat</a>
+            <a href="#" id="pin_reset" class="btn btn-full btn-m mt-4 me-3 ms-3 mb-4 font-900 text-uppercase" style="display:none;" onclick="pin_reset();">Vytvořit jiný PIN</a>
+        </div>
+    </div>
+
+    <div id="settings-unregister" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title mt-0 pt-0"><h1 style="line-height:1.2;text-align:center;font-size:19px;padding:19px 26px 3px 20px!important;">Pro obnovu PINu bude potřeba se ověřit přihlášením Identitou občana.</h1><a href="#" class="close-menu" style="color:black;padding-top:5px!important;"><i class="fa fa-times"></i></a></div>
+        <div class="card card-style mt-4" style="border-radius:0px;">
+            <div class="d-flex align-items-center justify-content-center" style="padding-bottom:28px;">
+                <span style="line-height:1.2;color:black;text-align:center;">Vznikne tak nová registrace a ta aktuální bude zrušena.</span>
+            </div>
+            <a href="#" class="btn btn-full btn-l text-uppercase font-700 bg-highlight" onclick="unregister();">Registrovat se Identitou občana</a>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="cordova_plugins.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded',onPageLoaded,false);
+  function onPageLoaded(){
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('autologout')) {
+        document.getElementById('inactivity_logout_snackbar_trigger').click();
+    }
+        const sub=localStorage.getItem('sub');
+        const piner=localStorage.getItem('pin');
+        const FINGERPRINT=localStorage.getItem('FINGERPRINT');
+        if(sub){
+           document.getElementById('login_verify').style.setProperty('display', '');
+           document.getElementById('callec').style.setProperty('display', 'none', 'important');
+           document.getElementById('walkthrough-slider').style.setProperty('visibility', 'hidden', 'important');
+           document.getElementById('nova_era').style.setProperty('display', 'block', 'important');
+           document.getElementById('profile_name').innerText = localStorage.getItem('given_name').toUpperCase() + " "+localStorage.getItem('family_name').toUpperCase();
+           document.getElementById('eDoklady').style.setProperty('font-size', '32px', 'important');
+           document.getElementById('eDoklady').style.setProperty('font-weight', '500', 'important');
+           document.getElementById('logo').style.setProperty('width', '130px', 'important');
+           console.log("sub found!");
+           if(piner){
+                if (!urlParams.has('autologout') && !urlParams.has('logout')) {
+                    document.getElementById('verifypin').click();
+                    setTimeout(biometrics,500);
+                }
+            } else {
+                document.getElementById('create_pin').click(); 
+            }  
+        } else {
+            document.getElementById('callec').style.setProperty('display', '');
+            document.getElementById('login_verify').style.setProperty('display', 'none', 'important');
+        }
+    }
+
+function biometrics(){
+    const FINGERPRINT=localStorage.getItem('FINGERPRINT');
+    if (FINGERPRINT && FINGERPRINT == "yes"){
+        Fingerprint.show({
+            title: 'Povolit přihlašování?',
+        }, (result) => {
+            window.location.href = 'home.html';
+            console.log("FINGERPRINT ÚSPĚCH");
+        }, (error) => {
+            console.error("FINGERPRINT AUTHENTICATION ERROR");
+        });
+    }
+}
+
+// BankID sandbox auth endpoint
+const authEndpoint = 'https://oidc.sandbox.bankid.cz/auth';
+
+// Configuration of scopes from BankID dev portal
+const scopes = ['openid', 'profile.email'];
+
+// Client ID and redirect URI (replace with your actual values)
+const clientId = '51e39854-bc6e-4c90-93d4-2f0b69455b2c';
+const redirectUri = 'mycordovaapp://callback';
+
+// Generate a random state value for additional security
+const state = generateRandomString();
+
+// Generate a random code verifier and challenge for PKCE
+const codeVerifier = generateRandomString();
+const codeChallenge = base64URLEncode(sha256(codeVerifier));
+
+// Save the code verifier and state in localStorage for later validation
+localStorage.setItem('codeVerifier', codeVerifier);
+localStorage.setItem('state', state);
+
+// Query parameters for the auth call
+const authUriParams = {
+  client_id: clientId,
+  state: state,
+  scope: scopes.join(' '),
+  redirect_uri: redirectUri,
+  response_type: 'token',
+  code_challenge: codeChallenge,
+  code_challenge_method: 'S256',
+};
+
+// Complete auth URI
+const authUri = 'https://oidc.sandbox.bankid.cz/auth?client_id=51e39854-bc6e-4c90-93d4-2f0b69455b2c&redirect_uri=mycordovaapp%3A%2F%2Fcallback&scope=profile.birthnumber%20profile.phonenumber%20profile.zoneinfo%20profile.gender%20openid%20profile.titles%20notification.claims_updated%20profile.name%20profile.birthplaceNationality%20profile.locale%20profile.idcards%20profile.maritalstatus%20profile.legalstatus%20profile.email%20profile.paymentAccounts%20profile.addresses%20profile.birthdate%20profile.updatedat&response_type=token&state='+state+'&nonce=d0c3e4b8-537f-4c34-b148-1aecb2e9437c&prompt=login&display=page&acr_values=loa3'; //`${authEndpoint}?${new URLSearchParams(authUriParams)}`;
+
+// Get the login button
+const loginButton = document.querySelector('#login');
+var loginBtnsDiv = document.getElementById("login_btn");
+/*var currentContent = loginBtnsDiv.innerHTML;*/
+function Callec(){
+  const authWindow = cordova.InAppBrowser.open(authUri, '_blank', 'location=no,toolbar=yes');
+      // Event listener to handle the callback URL after authentication
+      authWindow.addEventListener('loadstop', (event) => {
+        const url = decodeURIComponent(event.url);
+        if (url.startsWith(redirectUri + "#")) {
+          authWindow.close();
+          console.error('Got CALLBACK!  ', url);
+          handleCallback(url);
+        }
+      });
+}
+
+
+function handleCallback(callbackUrl) {
+    // IHNFI
+  callbackUrl = callbackUrl.replace('#', '?');
+
+  let accessToken;
+  let state;
+
+  const tokenStartIndex = callbackUrl.indexOf('access_token=');
+  if (tokenStartIndex !== -1) {
+    const tokenEndIndex = callbackUrl.indexOf('&', tokenStartIndex);
+    accessToken = tokenEndIndex !== -1
+      ? callbackUrl.substring(tokenStartIndex + 'access_token='.length, tokenEndIndex)
+      : callbackUrl.substring(tokenStartIndex + 'access_token='.length);
+  }
+
+  const stateStartIndex = callbackUrl.indexOf('state=');
+  if (stateStartIndex !== -1) {
+    const stateEndIndex = callbackUrl.indexOf('&', stateStartIndex);
+    state = stateEndIndex !== -1
+      ? callbackUrl.substring(stateStartIndex + 'state='.length, stateEndIndex)
+      : callbackUrl.substring(stateStartIndex + 'state='.length);
+  }
+
+  // Verify the state to prevent CSRF attacks
+  const storedState = localStorage.getItem('state');
+  if (state !== storedState) {
+    /*loginBtnsDiv.innerHTML = currentContent+"Přihlášení se nezdařilo!";*/
+    console.error('Invalid state parameter. Possible CSRF attack.');
+    return;
+  }
+
+  // Store the values in session storage
+  localStorage.setItem('state', state);
+  localStorage.setItem('accessToken', accessToken);
+
+  // Log the access token
+  console.log('Got access_token!', accessToken);
+  fetchUserData(accessToken);
+
+}
+
+
+function exchangeAuthorizationCode(code) {
+  const tokenEndpoint = 'https://oidc.sandbox.bankid.cz/token';
+
+  fetch(tokenEndpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: `grant_type=authorization_code&code=${code}&client_id=${clientId}&code_verifier=${localStorage.getItem('codeVerifier')}&redirect_uri=${redirectUri}`,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const accessToken = data.access_token;
+      fetchUserData(accessToken);
+    })
+    .catch((error) => console.error('Failed to exchange authorization code for access token', error));
+}
+
+function fetchUserData(accessToken) {
+    const headers = {
+        Authorization: `Bearer ${accessToken}`,
+    };
+
+    fetch('https://oidc.sandbox.bankid.cz/profile', { headers })
+        .then((response) => response.json())
+        .then((json) => {
+            console.log(JSON.stringify(json));
+                localStorage.setItem('sub', json.sub);
+                localStorage.setItem('txn', json.txn);
+                /*localStorage.setItem('nickname', json.nickname);*/
+                
+                // claims[]
+                const claims = json.verified_claims?.claims || {};
+                localStorage.setItem('given_name', claims.given_name);
+                localStorage.setItem('family_name', claims.family_name);
+                if (claims.gender == "male"){
+                    localStorage.setItem('gender', "Muž");
+                } else {
+                    localStorage.setItem('gender', "Žena");
+                }
+                
+                localStorage.setItem('birth_date', claims.birthdate);
+                localStorage.setItem('FINGERPRINT', "no");
+                localStorage.setItem('phone_number', json.phone_number);
+                localStorage.setItem('email', json.email);
+
+                const idcards = json.idcards || [];
+                idcards.forEach((idcard, index) => {
+                    if (idcard.type == "ID"){
+                        localStorage.setItem(`idcard.number`, idcard.number);
+                        localStorage.setItem(`idcard.valid_to`, idcard.valid_to);
+                        localStorage.setItem(`idcard.issuer`, idcard.issuer);
+                        localStorage.setItem(`idcard.issue_date`, idcard.issue_date);
+                        if (idcard.country == "CZ"){
+                            localStorage.setItem('country', "Česká republika");
+                        } else if (idcard.country == "SK"){
+                            localStorage.setItem('country', "Slovensko");
+                        } else if (idcard.country == "AT"){
+                            localStorage.setItem('country', "Rakousko");
+                        }
+                    }
+                });
+
+                localStorage.setItem('birth_number', json.birthnumber);
+                localStorage.setItem('birth_place', json.birthplace);
+                
+                const addresses = json.addresses || [];
+                addresses.forEach((address, index) => {
+                    if (address.type == "PERMANENT_RESIDENCE"){
+                        localStorage.setItem(`address.buildingapartment`, address.buildingapartment);
+                        localStorage.setItem(`address.city`, address.city);
+                        localStorage.setItem(`address.street`, address.street);
+                    }
+                });
+                localStorage.setItem(`updated_at`, json.updated_at);
+
+                    console.log('Second Fetch Response:', JSON.stringify(json));
+                    document.getElementById('create_pin').click();
+        })
+        .catch((error) => console.error('Failed to fetch user json', error));
+}
+
+// Helper functions for PKCE
+function generateRandomString(){
+  const array = new Uint32Array(28);
+  window.crypto.getRandomValues(array);
+  return Array.from(array, dec => ('0' + dec.toString(16)).substr(-2)).join('');
+}
+
+function sha256(plain){
+  const encoder = new TextEncoder();
+  const data = encoder.encode(plain);
+  return crypto.subtle.digest('SHA-256', data);
+}
+
+function base64URLEncode(buffer){
+  const base64 = btoa(String.fromCharCode.apply(null, new Uint8Array(buffer)));
+  return base64.replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+}
+function i(value){
+    var pin=document.getElementById('pin');
+    if(value=="r"){pin.value=pin.value.slice(0,-1);}else{pin.value=pin.value+value;}
+}
+function z(value){
+    var pin=document.getElementById('pinz');
+    if(value=="r"){pin.value=pin.value.slice(0,-1);}else{pin.value=pin.value+value;}
+}
+
+function pin_check(){ // not used
+    var pin=document.getElementById('pin').value;
+    var pin_continue=document.getElementById('pin_continue');
+    if (pin == ""){
+
+    }
+}
+var pin1 = "";
+function pin_reset(){
+    var pin_message = document.getElementById('pin_message');
+    var pin_head = document.getElementById('pin_head');
+    var pin_button=document.getElementById('pin_continue');
+    pin_message.innerHTML = "<span>! Zadejte 4-8 číslic, pro větší bezpečnost doporučujeme min. 6</span>";
+    pin_head.innerText = "Vytvořte PIN. Příště bude stačit k přihlášení.";
+    pin_button.setAttribute('onclick', 'pin_create()');
+    document.getElementById('pin_reset').style.display = 'none';
+    document.getElementById('pin').value = "";
+}
+
+var pin_tried = 3;
+function pin_login(){
+    const pin=localStorage.getItem('pin');
+    var ppinz = document.getElementById('pinz').value;
+    var error_pin = document.getElementById('error_pin');
+    var pokusy = document.getElementById('pokusy');
+    if (pin == ppinz){
+        window.location.href = 'home.html';
+    } else {
+        document.getElementById('pinz').value = '';
+        pin_tried = pin_tried-1;
+        pokusy.innerText = pin_tried;
+        if (pin_tried == 0){
+            unregister();
+        } else {
+            error_pin.style.display = 'block';
+        }
+    }
+}
+function unregister(){
+    localStorage.clear();
+    window.location.href = 'index.html';
+}
+var pin1 = "";
+var pin_setstage = 0;
+function pin_create() {
+    if (pin_setstage == 0){
+        console.log("pin_create called!");
+        var pin_message = document.getElementById('pin_message_create');
+        var pin_head = document.getElementById('pin_head_create');
+        var pin_button = document.getElementById('pin_continue');
+        pin1 = document.getElementById('pin').value;
+        document.getElementById('pin').value = '';
+        pin_head.innerText = "Pro kontrolu zadejte přihlašovací PIN znovu";
+        document.getElementById('pin_reset').style.display = 'block';
+        console.log("pin_create passed!");
+        pin_setstage = 1;
+    } else {
+        var pin2 = document.getElementById('pin').value;
+        if (pin1 == pin2){
+            localStorage.setItem('pin', pin1);
+            window.location.href = 'home.html';
+        } else {
+            var pin_message = document.getElementById('pin_message');
+            pin_message.innerHTML = "<span>! PINy se neshodují</span>";
+        }
+    }
+    
+}
+
+function openWeb(uri){
+  const webWindow=cordova.InAppBrowser.open(uri,'_blank','location=yes,toolbar=yes');
+    /*webWindow.addEventListener('loadstop', (event) => { /*{do nothing}*/ /*});*/ // Listen when something.. ¯\_(ツ)_/¯
+}
+</script>
+</body>

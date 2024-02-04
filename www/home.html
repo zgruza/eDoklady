@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html lang="cs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>eDoklady</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="styles/select2.min.css">
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+    
+<body class="theme-light" data-highlight="highlight-blue" data-gradient="body-default">
+    
+<div id="preloader"><div class="spinner-border color-blue-light" role="status"></div></div>
+    
+<div id="page">
+    
+    <!--<div class="header header-fixed header-logo-center header-auto-show"><a href="#" data-toggle-theme class="header-icon header-icon-4"><i class="fas fa-lightbulb"></i></a></div>-->
+    <style>.footer-bar-4 span{display:block!important;}
+#footer-bar b{color:#1f1f1f;padding-top:12px;position:relative;flex:1 1 auto;}.footer-bar-4 i{padding-top:0!important}
+.footer-bar-4 .active-nav strong{position:absolute;width:70px;height:70px;border-radius:60px;left:50%;top:30px;transform:translate(-50%,-50%);bottom:0px;}.timeline-item .timeline-icon{font-size:22px!important;width:35px!important;height:35px!important;top:18px!important;line-height:36px!important;left:27px!important}
+#pagecon{transform:none!important;}
+.timeline-item-content,.timeline-item-content-full{margin:0px 0px 0px 90px!important;}
+.footer-bar-4 .active-nav{color:#1664A2!important;fill:#1664A2!important}
+.footer-bar-4 .middle{color:white!important;fill:white!important}</style>
+
+    <div id="footer-bar" class="footer-bar-4 rounded-s">
+            <b class="active-nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27px" viewBox="0 0 576 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg><span>Doklady</span></b>
+            <b class="middle active-nav">
+                <i class="fa fa-id-badge" style="position:relative;top:-30px!important;font-size:30px;z-index:999;"></i>
+                <div style="top:-30px!important;position:relative;color:white;z-index:999;font-size:10px;line-height:0.8;font-weight:normal;">Prokázat</br>se</div>
+                <strong style="top:6px;"></strong>
+            </b>
+            <b onclick="window.location.href='profile_p.html'"><i class="fa fa-user" style="font-size:21px;"></i><span>Profil</span></b>
+    </div>
+        
+    <div class="page-content" id="pagecon" style="background-color:#f0f0f0!important;">
+        <div class="content notch-clear">
+            <div class="d-flex pt-2">
+                <div class="align-self-center me-auto">
+                    <h1 class="mt-4 font-20">Doklady</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-style mt-8" style="background-color:transparent!important;border:none!important;box-shadow:none;position:fixed;bottom:66px;background-color:#f0f0f0!important;">
+            <div class="d-flex py-4" style="border:none!important;position:relative;">
+                <div class="align-self-center">
+                    <b class="mt-8 font-18" style="position:absolute;top:18%;left:23%;transform:translate(-50%, -50%);z-index:1;color:black;">Občanský průkaz</b>
+                    <a class="mt-8 font-20" style="position:absolute;top:35%;left:16%;transform:translate(-50%, -50%);z-index:1;color:black;" id="card_no_1">206002222</a>
+                    <img src="images/src_assets_cards_identitycardbackground.png" data-menu="card-details" style="max-width:100%;z-index:0;">
+                </div>
+
+            </div>
+            <a href="#" class="d-flex font-15 align-items-center justify-content-center" data-menu="menu-where" style="color:#2362a2;font-weight:500;">Kde mohu eDoklady využít?</a>
+        </div>
+    </div>
+    <!-- End of Page Content--> 
+    
+    <!--Menu Events-->
+    <div id="menu-where" class="menu menu-box-bottom menu-box-detached"> <!--data-menu-height="420"-->
+        <div class="menu-title mt-0 pt-0"><h1 style="text-align:center;font-size:19px;padding:20px 0px 3px 0px!important;">Kde mohu eDoklady využít?</h1><p class="color-highlight">&nbsp;&nbsp;&nbsp;</p><a href="#" class="close-menu" style="color:#0f1117!important"><i class="fa fa-times"></i></a></div>
+        <div class="divider divider-margins mb-0"></div>
+        <div class="content" style="margin: 8px 15px 20px 15px!important;">
+            <a href="#" class="mb-3" data-menu="menu-where">
+                <div>
+                    <h2 style="font-weight:500!important;">Start na ministerstvech a ústředních úřadech</h2>
+                </div>
+                <div>
+                    <span class="font-13 color-theme d-block pb-2 pt-2" style="line-height:25px;">Ověřovatelům dáváme čas, aby se na eDoklady připravili. Od 20. ledna 2024 je bude možné používat při komunikaci s ústředními správními úřady, především tedy ministerstvy.</span>
+                    <span class="font-13 color-theme d-block pt-2" style="line-height:25px;">Další ověřovatelé budou moci akceptovat eDoklady dříve, než jim to stanoví zákon.</span></br>
+                </div>
+            </a>
+            <div class="timeline-body" style="margin-top:0!important;padding-bottom:0!important;padding-top:0px!important;background-color:transparent!important;">
+                <div class="timeline-deco" style="background-color:#2362a2!important;width:2px!important;top:42px;bottom:185px;"></div>
+                <div class="timeline-item" style="top:-8px;">
+                    <i class="fa fa-check color-white shadow-l timeline-icon" style="background-color:#529d00!important;top:-1px!important;"></i>
+                    <div class="timeline-item-content card card-style" style="box-shadow:none!important;padding:0px 0px!important;">
+                        <h5 class="font-500 pt-1 pb-1">
+                            20. ledna 2024<br>
+                            <span style="color:#666;font-weight:500!important;">Ústřední správní úřady</span>
+                        </h5>
+                    </div>
+                </div>
+                <div class="timeline-deco" style="background-color:#2362a2!important;width:2px!important;top:105px;bottom:105px;"></div><div class="timeline-item">
+                    <i class="bg-highlight color-white shadow-l timeline-icon" style="width:20px!important;height:20px!important;left:33px!important;top:13px!important;"></i>
+                    <div class="timeline-item-content card card-style mt-3" style="box-shadow:none!important;padding:10px 0px!important;margin: 0px 0px -12px 90px!important;">
+                        <h5 class="font-500 pt-1 pb-1">
+                            1. července 2024<br>
+                            <span style="color:#666;font-weight:500!important;">Další státní orgány, kraje a obce s rozšířenou působností</span>
+                        </h5>
+                    </div>
+                </div>
+                <div class="timeline-item" style="top:-8px;">
+                    <i class="bg-highlight color-white shadow-l timeline-icon" style="width:20px!important;height:20px!important;left:33px!important;top:15px!important;"></i>
+                    <div class="timeline-item-content card card-style mt-3" style="box-shadow:none!important;padding:10px 0px!important;margin:0px 0px -12px 90px!important;">
+                        <h5 class="font-500 pt-1 pb-1">
+                            1. ledna 2025<br>
+                            <span style="color:#666;font-weight:500!important;">Ostatní orgány veřejné moci i soukromé osoby</span>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="close-menu btn btn-full btn-xl font-700 mt-3" style="background-color:#27558d!important;color:#FFF!important">Rozumím</a>
+                <a href="#" onclick="openWeb('https://edoklady.gov.cz/podpora-obcanu/clanky-a-navody/prehled-mist-kde-lze-edoklady-pouzit');" class="close-menu mt-3 d-flex font-17 font-500  align-items-center justify-content-center pl-2" style="color:#254e80;">Chci vědět více <div style="padding-left:8px;"><svg width="22px"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="fill:#254e80;"><!--! Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M336 0c-8.8 0-16 7.2-16 16s7.2 16 16 16H457.4L212.7 276.7c-6.2 6.2-6.2 16.4 0 22.6s16.4 6.2 22.6 0L480 54.6V176c0 8.8 7.2 16 16 16s16-7.2 16-16V16c0-8.8-7.2-16-16-16H336zM64 32C28.7 32 0 60.7 0 96V448c0 35.3 28.7 64 64 64H416c35.3 0 64-28.7 64-64V304c0-8.8-7.2-16-16-16s-16 7.2-16 16V448c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32H208c8.8 0 16-7.2 16-16s-7.2-16-16-16H64z"/></svg></div></a>
+            <!--<a href="#" class="btn btn-m rounded-sm bg-highlight btn-full text-uppercase font-700 mt-4">View your Events</a>-->
+        </div>
+    </div> 
+
+
+    <!-- INDETITY DETAILS -->
+    <div id="card-details" class="menu menu-bg menu-box-right" data-menu-width="cover" data-menu-effect="menu-push-full">
+
+        <div class="card card-style mt-3 pb-2" style="background-color:var(--bs-body-bg)!important;box-shadow:none!important;">
+            <a href="#" class="close-menu header-icon header-icon-1"><i class="fas fa-arrow-left"></i><h1 class="font-19" style="text-align:center;margin-top:-28px;" id="pin_head">Občanský průkaz</h1></a>
+        </div>
+
+        <div class="card card-style mt-4" style="margin:0 auto;position:relative;text-align:center;background-color:var(--bs-body-bg)!important;box-shadow:none!important;">
+            <div class="align-items-center justify-content-center align-self-center">
+                <b class="mt-8 font-13" style="position:absolute;top:7%;left:34%;transform:translate(-50%, -50%);z-index:1;color:black;">Občanský průkaz</b>
+                <a class="mt-8 font-15" style="position:absolute;top:22%;left:30%;transform:translate(-50%, -50%);z-index:1;color:black;" id="card_number_1">%</a>
+                <img src="images/src_assets_cards_identitycardbackground.png" data-menu="card-details" style="max-width:60%;z-index: 0;">
+
+                <div class="alert alert-small shadow-xl" role="alert" style="margin-top:30px;margin-left:3rem!important;margin-right:3rem!important;padding:7px;background-color:#E8F5E1;color:#7F8F71;border:1px solid #7F8F71;border-radius:30px!important;">
+                    <i class="fa fa-check"></i>
+                    <strong style="font-size:13px;padding-left:12px!important;" id="update_at">Digitální výpis aktualizován: 31.01. 16:48</strong>
+                </div>
+
+            </div>
+        </div>
+        <style>.card{background-color:white!important;}/*.card-style{box-shadow:none!important}*/
+        .d{float:right;opacity:0.5;}
+        .list-group a{color:#1f1f1f;font-weight:500;font-size:17px;border-bottom:solid 1px rgba(0,0,0,0.05);}
+    </style>
+
+        <div class="card card-style">
+            
+            <div class="content my-0">
+                <div class="list-group" style="line-height:50px;">
+                    <a href="#">
+                        <span>Číslo dokladu</span>
+                        <div class="d"><span id="card_number_2">%</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="margin-left:5px;width:20px;fill:#235189!important"><!--! Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M384 352H224c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32H332.1c4.2 0 8.3 1.7 11.3 4.7l67.9 67.9c3 3 4.7 7.1 4.7 11.3V320c0 17.7-14.3 32-32 32zM433.9 81.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H224c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V416H256v32c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V192c0-17.7 14.3-32 32-32h64V128H64z"/></svg></div>
+                    </a>
+
+                    <a href="#">
+                        <span>Příjmení</span>
+                        <div class="d" id="surname">%</div>
+                    </a>
+                    <a href="#">
+                        <span>Jméno</span>
+                        <div class="d" id="name">%</div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card card-style">
+            
+            <div class="content my-0">
+                <div class="list-group" style="line-height:50px;">
+                    <a href="#">
+                        <span>Rodné číslo</span>
+                        <div class="d"><span id="birth_number">%</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="margin-left:5px;width:20px;fill:#235189!important"><!--! Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M384 352H224c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32H332.1c4.2 0 8.3 1.7 11.3 4.7l67.9 67.9c3 3 4.7 7.1 4.7 11.3V320c0 17.7-14.3 32-32 32zM433.9 81.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H224c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V416H256v32c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V192c0-17.7 14.3-32 32-32h64V128H64z"/></svg></div>
+                    </a>
+
+                    <a href="#">
+                        <span>Datum narození</span>
+                        <div class="d" id="birth_date">%</div>
+                    </a>
+                    <a href="#">
+                        <span>Místo narození</span>
+                        <div class="d" id="birth_place">%</div>
+                    </a>
+                    <a href="#">
+                        <span>Pohlaví</span>
+                        <div class="d" id="birth_gender">%</div>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="card card-style">
+            
+            <div class="content my-0">
+                <div class="list-group" style="line-height:50px;">
+                    <a href="#">
+                        <span>Trvalý pobyt</span>
+                        <div class="d"><span id="permanent_residence">%</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style="margin-left:5px;width:20px;fill:#235189!important"><!--! Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M384 352H224c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32H332.1c4.2 0 8.3 1.7 11.3 4.7l67.9 67.9c3 3 4.7 7.1 4.7 11.3V320c0 17.7-14.3 32-32 32zM433.9 81.9L366.1 14.1c-9-9-21.2-14.1-33.9-14.1H224c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V115.9c0-12.7-5.1-24.9-14.1-33.9zM64 128c-35.3 0-64 28.7-64 64V448c0 35.3 28.7 64 64 64H224c35.3 0 64-28.7 64-64V416H256v32c0 17.7-14.3 32-32 32H64c-17.7 0-32-14.3-32-32V192c0-17.7 14.3-32 32-32h64V128H64z"/></svg></div>
+                    </a>
+
+                    <a href="#">
+                        <span>Statání občanství</span>
+                        <div class="d" id="state">%</div>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="card card-style">
+            
+            <div class="content my-0">
+                <div class="list-group" style="line-height:50px;">
+                    <a href="#">
+                        <span>Datum vydání</span>
+                        <div class="d" id="card_release_date">%</div>
+                    </a>
+
+                    <a href="#">
+                        <span>Platnost do</span>
+                        <div class="d" id="card_expiry">%</div>
+                    </a>
+
+                     <a href="#">
+                        <span>Vydal</span>
+                        <div class="d" id="card_release_authority">%</div>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+    <!-- Menu Settings Highlights-->
+    <div id="menu-highlights" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title"><h1>Barvy</h1><p class="color-highlight">Barvu vaší aplikace</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+            <div class="highlight-changer">
+                <a href="#" id="apply_default" data-change-highlight="blue"><i class="fa fa-circle color-blue-dark"></i><span class="color-blue-light">Základní</span></a>
+                <a href="#" data-change-highlight="red"><i class="fa fa-circle color-red-dark"></i><span class="color-red-light">Červená</span></a>
+                <a href="#" data-change-highlight="orange"><i class="fa fa-circle color-orange-dark"></i><span class="color-orange-light">Oranžová</span></a>
+                <a href="#" data-change-highlight="pink2"><i class="fa fa-circle color-pink2-dark"></i><span class="color-pink-dark">Růžová</span></a>
+                <a href="#" data-change-highlight="magenta"><i class="fa fa-circle color-magenta-dark"></i><span class="color-magenta-light">Fioalová</span></a>
+                <a href="#" data-change-highlight="aqua"><i class="fa fa-circle color-aqua-dark"></i><span class="color-aqua-light">Aqua</span></a>
+                <a href="#" data-change-highlight="teal"><i class="fa fa-circle color-teal-dark"></i><span class="color-teal-light">Šedozelená</span></a>
+                <a href="#" data-change-highlight="mint"><i class="fa fa-circle color-mint-dark"></i><span class="color-mint-light">Mint</span></a>
+                <a href="#"  data-change-highlight="green"><i class="fa fa-circle color-green-light"></i><span class="color-green-light">Zelená</span></a>
+                <a href="#" data-change-highlight="grass"><i class="fa fa-circle color-green-dark"></i><span class="color-green-dark">Tráva</span></a>
+                <a href="#" data-change-highlight="sunny"><i class="fa fa-circle color-yellow-light"></i><span class="color-yellow-light">Slunce</span></a>
+                <a href="#" data-change-highlight="yellow"><i class="fa fa-circle color-yellow-dark"></i><span class="color-yellow-light">Zlatá</span></a>
+                <a href="#" data-change-highlight="brown"><i class="fa fa-circle color-brown-dark"></i><span class="color-brown-light">Dřevo</span></a>
+                <a href="#" data-change-highlight="night"><i class="fa fa-circle color-dark-dark"></i><span class="color-dark-light">Noční</span></a>
+                <a href="#" data-change-highlight="dark"><i class="fa fa-circle color-dark-light"></i><span class="color-dark-light">Tmavá</span></a>
+                <div class="clearfix"></div>
+            </div>
+            <a href="#" data-menu="menu-settings" class="mb-3 btn btn-full btn-m rounded-sm bg-highlight shadow-xl text-uppercase font-900 mt-4">Zpět do Nastavení</a>
+        </div>
+    </div>
+    <!-- Menu Settings Backgrounds-->
+    <div id="menu-backgrounds" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title"><h1>Pozadí</h1><p class="color-highlight">Změnit barvu stránky za obsahovým rámečky</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+            <div class="background-changer">
+                <a href="#" data-change-background="default"><i class="bg-theme"></i><span class="color-dark-dark">Základní</span></a>
+                <a href="#" data-change-background="plum"><i class="body-plum"></i><span class="color-plum-dark">Plum</span></a>
+                <a href="#" data-change-background="magenta"><i class="body-magenta"></i><span class="color-dark-dark">Purpurová</span></a>
+                <a href="#" data-change-background="dark"><i class="body-dark"></i><span class="color-dark-dark">Tmavá</span></a>
+                <a href="#" data-change-background="violet"><i class="body-violet"></i><span class="color-violet-dark">Fialová</span></a>
+                <a href="#" data-change-background="red"><i class="body-red"></i><span class="color-red-dark">Červená</span></a>
+                <a href="#" data-change-background="green"><i class="body-green"></i><span class="color-green-dark">Zelená</span></a>
+                <a href="#" data-change-background="sky"><i class="body-sky"></i><span class="color-sky-dark">Nebe</span></a>
+                <a href="#" data-change-background="orange"><i class="body-orange"></i><span class="color-orange-dark">Oranžová</span></a>
+                <a href="#" data-change-background="yellow"><i class="body-yellow"></i><span class="color-yellow-dark">Žlutá</span></a>
+                <div class="clearfix"></div>
+            </div>
+            <a href="#" data-menu="menu-settings" class="mb-3 btn btn-full btn-m rounded-sm bg-highlight shadow-xl text-uppercase font-900 mt-4">Zpět do Nastavení</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="cordova_plugins.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<style type="text/css">
+.rating-table{border-collapse:collapse;width:100%;}
+tbody{display:table-row-group;vertical-align:middle;border-color:inherit;}
+tr{display:table-row;vertical-align:inherit;border-color:inherit;}
+/*.rating-table tr td:first-child,.rating-table tr th:first-child{border-left:0;}*/
+.rating-table tr:first-child th{border-top:0;}
+.rating-table tr td{max-width: 40px;}
+.rating-table .left{text-align:left;}
+.rating-table td,.rating-table th{border:1px solid #666;}
+th{display:table-cell;vertical-align:inherit;font-weight:bold;text-align:-internal-center;}
+/*.rating-table tr td:last-child,.rating-table tr th:last-child{border-right:0;}*/
+</style>
+<script>
+//onPageLoaded();
+document.addEventListener('DOMContentLoaded',onPageLoaded,false);
+function onPageLoaded(){
+    document.getElementById('apply_default').click();
+
+    /* SETUP CARD DETAILS */
+    document.getElementById('surname').innerText = (localStorage.getItem('family_name') || '').toUpperCase();
+    document.getElementById('name').innerText = (localStorage.getItem('given_name') || '').toUpperCase();
+    document.getElementById('birth_number').innerText = (localStorage.getItem('birth_number') || '').toUpperCase();
+    const birthDateStr = localStorage.getItem('birth_date');
+    const birthDate = new Date(birthDateStr);
+    const formattedBirthDate = `${birthDate.getDate().toString().padStart(2, '0')}.${(birthDate.getMonth() + 1).toString().padStart(2, '0')}.${birthDate.getFullYear()}`;
+    document.getElementById('birth_date').innerText = (formattedBirthDate || '').toUpperCase();
+    document.getElementById('birth_place').innerText = (localStorage.getItem('birth_place') || '').toUpperCase();
+    document.getElementById('birth_gender').innerText = (localStorage.getItem('gender') || '').toUpperCase();
+
+    const firstAddressBuildingApartment = localStorage.getItem('address.buildingapartment');
+    const firstAddressCity = localStorage.getItem('address.city');
+    document.getElementById('permanent_residence').innerText = `${firstAddressBuildingApartment || ''}, ${firstAddressCity || ''}`;
+
+    document.getElementById('state').innerText = (localStorage.getItem('country') || '').toUpperCase();
+    const idCardIssueDateStr = localStorage.getItem('idcard.issue_date');
+    const idCardIssueDate = new Date(idCardIssueDateStr);
+    const formattedIdCardIssueDate = `${idCardIssueDate.getDate().toString().padStart(2, '0')}.${(idCardIssueDate.getMonth() + 1).toString().padStart(2, '0')}.${idCardIssueDate.getFullYear()}`;
+    const idCardValidToDateStr = localStorage.getItem('idcard.valid_to');
+    const idCardValidToDate = new Date(idCardValidToDateStr);
+    const formattedIdCardValidToDate = `${idCardValidToDate.getDate().toString().padStart(2, '0')}.${(idCardValidToDate.getMonth() + 1).toString().padStart(2, '0')}.${idCardValidToDate.getFullYear()}`;
+    const firstCardIssuer = localStorage.getItem('idcard.issuer');
+    document.getElementById('card_release_date').innerText = formattedIdCardIssueDate;
+    document.getElementById('card_no_1').innerText = document.getElementById('card_number_1').innerText = document.getElementById('card_number_2').innerText = localStorage.getItem('idcard.number');
+    document.getElementById('card_expiry').innerText = formattedIdCardValidToDate;
+    document.getElementById('card_release_authority').innerText = firstCardIssuer;
+   const formattedUpdatedAt = new Date(parseInt(localStorage.getItem('updated_at'), 10) * 1000).toLocaleString('cs-CZ', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+
+    document.getElementById('update_at').innerText = "Digitální výpis aktualizován: " + formattedUpdatedAt;
+
+
+}
+function openWeb(uri){
+  const webWindow = cordova.InAppBrowser.open(uri, '_blank', 'location=yes,toolbar=yes');
+      webWindow.addEventListener('loadstop', (event) => {
+        // {do nothing}
+      });
+}
+</script>
+</body>

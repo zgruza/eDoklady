@@ -1,0 +1,399 @@
+<!DOCTYPE HTML>
+<html lang="cs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>Profil</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i|Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+<link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+<link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans+Mono:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="theme-light" data-highlight="highlight-blue" data-gradient="body-default">
+
+<div id="preloader"><div class="spinner-border color-blue-light" role="status"></div></div>
+
+<div id="page">
+
+    <div class="header header-fixed header-logo-center" style="background-color:var(--bs-body-bg)!important;box-shadow:none!important;">
+        <a href="index.html" class="header-title" style="font-size:18px;">Profil</a>
+        <!--<a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" data-toggle-theme class="header-icon header-icon-4"><i class="fas fa-lightbulb"></i></a>-->
+    </div>
+
+    <style>.footer-bar-4 span{display:block!important;}
+#footer-bar b{color:#1f1f1f;padding-top:12px;position:relative;flex:1 1 auto;}.footer-bar-4 i{padding-top:0!important}
+.footer-bar-4 .active-nav strong{position:absolute;width:70px;height:70px;border-radius:60px;left:50%;top:30px;transform:translate(-50%,-50%);bottom:0px;}
+#pagecon{transform:none!important;}
+.timeline-item-content, .timeline-item-content-full{margin:0px 0px 0px 90px!important;}
+.footer-bar-4 .active-nav{color:#1664A2!important;fill:#1664A2!important}
+.footer-bar-4 .middle{color:white!important;fill:white!important}
+.fa-chevron-right,.fa-chevron-down,.fa-arrow-up-right-from-square{color:#2362a2!important}
+.card{background-color:transparent!important;}
+.card{background-color:white!important;}
+#settings-changepin .card{background-color:transparent!important;}
+.card-style{box-shadow:none!important}
+</style>
+
+    <div id="footer-bar" class="footer-bar-4 rounded-s">
+            <b onclick="window.location.href='home.html'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="27px" viewBox="0 0 576 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 256h64c44.2 0 80 35.8 80 80c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16c0-44.2 35.8-80 80-80zm-32-96a64 64 0 1 1 128 0 64 64 0 1 1 -128 0zm256-32H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg><span>Doklady</span></b>
+            <b class="middle active-nav">
+                <i class="fa fa-id-badge" style="position:relative;top:-30px!important;font-size:30px;z-index:999;"></i>
+                <div style="top:-30px!important;position:relative;color:white;z-index:999;font-size:10px;line-height:0.8;font-weight:normal;">Prokázat</br>se</div>
+                <strong style="top:6px;"></strong>
+            </b>
+            <b class="active-nav"><i class="fa fa-user" style="font-size:21px;"></i><span>Profil</span></b>
+    </div>
+
+    <div class="page-content header-clear-medium">
+        <span style="margin:0px 16px 30px 16px;">Aktivní profil a jeho přepnutí</span>
+        <div class="card card-style">
+            
+            <a data-menu="settings-pane" href="#" class="d-flex m-3">
+
+                <div class="mt-2 img-fluid shadow-xl rounded-circle d-flex" id="avatar" style="width:50px!important;height:50px!important;background-color:#ebebeb;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 448 512" style="fill:#c9c9c9;margin-top:6px;margin-left:8px;"><!--! Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M336 128a112 112 0 1 0 -224 0 112 112 0 1 0 224 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM16 482.3c0 7.6 6.1 13.7 13.7 13.7H418.3c7.6 0 13.7-6.1 13.7-13.7C432 392.7 359.3 320 269.7 320H178.3C88.7 320 16 392.7 16 482.3zm-16 0C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/></svg>
+                    </div></br>
+                <div>
+                    <h3 class="mb-0 ms-2 font-700" style="margin-top:1rem!important;" id="profile_name">%fname%</h3>
+                    <p class="font-12 mt-n1 mb-0 pb-0" style="padding-left:8px;">občan</p>
+                </div>
+                <div class="ms-auto mt-3"><i class="fa fa-chevron-down font-14"></i></div>
+            </a>
+            <hr style="margin:0!important;">
+            <div class="content my-0">
+                <div class="list-group list-custom-small">
+                    <a href="#">
+                        <i class="fa font-14 fa-clock-rotate-left rounded-s"></i>
+                        <span>Historie prokazování</span>
+                        <!--<div class="custom-control scale-switch ios-switch">
+                            <input type="checkbox" class="ios-input" id="switch-1">
+                            <label class="custom-control-label" for="switch-1"></label>
+                        </div>-->
+                        <i class="fa font-14 fa-chevron-right"></i>
+                    </a>
+                    <a data-menu="settings-logout" href="#" onclick="logout();">
+                        <i class="fa font-14 fa-arrow-right-from-bracket rounded-s" style="transform:rotate(180deg);"></i>
+                        <span>Odhlásit se</span>
+                        <!--<span class="badge badge-text color-theme text-capitalize font-14 font-400 opacity-60">Enabled wi-Fi 1</span>-->
+                        <i class="fa font-14 fa-chevron-right"></i>
+                    </a>
+                    <a data-menu="settings-unregister" href="#">
+                        <i class="fa font-14 fa-trash-can rounded-s"></i>
+                        <span>Zrušit registraci zařízení</span>
+                        <!--<span class="badge badge-text color-theme text-capitalize font-14 font-400 opacity-60">On</span>-->
+                        <i class="fa font-14 fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+<span style="margin:0px 16px 30px 16px;">Zabezpečení</span>
+        <div class="card card-style">
+            
+            <div class="content my-0">
+                <div class="list-group list-custom-small">
+                    <a data-menu="settings-changepin" href="#">
+                        <i class="fa font-14 fa-lock rounded-s"></i>
+                        <span>Změna přihlašovacího PINu</span>
+                        <i class="fa font-14 fa-chevron-right"></i>
+                    </a>
+                    <a href="#" data-trigger-switch="switch-bio" id="bioswitch">
+                        <i class="fa font-14 fa-fingerprint rounded-s"></i>
+                        <span>Biometrie pro přihlášení</span>
+                        <div class="custom-control scale-switch ios-switch">
+                            <input type="checkbox" class="ios-input" id="switch-bio" onchange="biometrics();" onclick="biometrics();">
+                            <label class="custom-control-label" for="switch-bio" onchange="biometrics();" onclick="biometrics();"></label>
+                        </div>
+                        <i class="fa font-14 fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+<span style="margin:0px 16px 30px 16px;">Může se hodit</span>
+        <div class="card card-style">
+            
+            <div class="content my-0">
+                <div class="list-group list-custom-small">
+                    <a data-menu="settings-pane" href="#">
+                        <i class="fa font-14 rounded-s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M112 128a112 112 0 1 1 224 0 112 112 0 1 1 -224 0zm240 0A128 128 0 1 0 96 128a128 128 0 1 0 256 0zM16 482.3C16 392.7 88.7 320 178.3 320h91.4c6.2 0 12.3 .3 18.3 1l0-1c0-5.1 .2-10.1 .7-15c-6.2-.7-12.6-1-19-1H178.3C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7c0-.8 0-1.5 0-2.3c-5.4 0-10.7-.3-16-.8c0 1 0 2.1 0 3.1c0 7.6-6.1 13.7-13.7 13.7H29.7c-7.6 0-13.7-6.1-13.7-13.7zM448 208.1a112 112 0 1 1 0 224 112 112 0 1 1 0-224zm0 240c32.5 0 62.1-12.1 84.7-32l93.7 93.7c3.1 3.1 8.2 3.1 11.3 0s3.1-8.2 0-11.3L544 404.8c19.9-22.6 32-52.2 32-84.7c0-70.7-57.3-128-128-128s-128 57.3-128 128s57.3 128 128 128z"/></svg></i>
+                        <span>Zkontrolovat cizí doklad</span>
+                        <i class="fa font-14 fa-chevron-right"></i>
+                    </a>
+
+                    <a data-menu="settings-pane" href="#" onclick="openWeb('https://edoklady.gov.cz/podpora-obcanu')">
+                        <i class="fa-regular font-14 fa-circle-question rounded-s"></i>
+                        <span>Nápověda</span>
+                        <i class="fa font-14 fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a data-menu="settings-pane" href="#" onclick="openWeb('https://edoklady.gov.cz/osobni-udaje-a-cookies')">
+                        <i class="fa font-14 fa-trash-can rounded-s"></i>
+                        <span>Zpracování osobních údajů</span>
+                        <i class="fa font-14 fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                    <a data-menu="settings-pane" href="#" onclick="openWeb('https://obcan.portal.gov.cz/prihlaseni')">
+                        <i class="fa font-14 rounded-s"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" xmlns:v="https://vecta.io/nano"><path d="M30 4.9c.7 0 .9.4 1 .7v.1.1c0 .2 0 .5-.1.6l-.1.2v.1h0 0l.1.1h0l.3.5h0l.2.3c.4.7.9 1.6.9 2.5 0 1.5.3 3.3 1.7 4.8h-.1 0-.1-.1l-.2-.1c-.4-.1-.8-.4-1.3-.8-.1 0-.1.2-.1.5v.3h0v.3h0v.4.4.4.2.4c.1.6.2 1.1.4 1.4.2.2-.2.1-.6-.3l-.2-.2h0l-.3-.3c-.1-.2-.2-.3-.3-.2H31h0l-.1.1h0l-.1.2h0l-.1.2h0l-.1.2c-.2.8-.4 2 .3 3.2.1.2 0 .2-.2.1l-.1-.1h0l-.2-.1c-.3-.2-.8-.6-1-1 0-.1-.1 0-.2.2l-.1.2h0l-.1.2h0v.3c-.2.9-.2 2.4.5 3.7.1.2-.1.1-.3 0l-.2-.1h0l-.2-.1h0l.2-.1s-.1 0-.1-.1l-.1-.1-.2-.2v-.1c-.2-.3-.5.4 0 1.5l.6 1.1h0l.2.4h0l.2.4c.3.5.5.9.7 1.1s.6.5 1.1.7l.8.4c.1.1.2.1.3.2h.1 0l.6.4h0l.3.2c.8.5 2 1.1 3.1 1.1 1.7 0 2.6-1.2 2.6-1.8h-.1 0l-.6-.1h0-.2 0l-.2-.1h0l-.3-.1h0l-.3-.1h-.1l-.3-.1c-1.5-.6-3.4-1.9-3.4-5.1 0-2.5 1.6-4.3 2.9-5.4l.3-.2h0l.3-.2h0l.2-.2h0l.3-.2h0l.3-.2.9.9-.3.2h0l-.4.3h0l-.3.2-.1.1-.3.3c-1.1 1-2.5 2.6-2.5 4.4 0 3 2.7 4.4 4.3 4.4v-.1h0v-.1h0v-.1h0V28h0v-.1-.1-.1h0v-.2-.2l-.1-.2c-.3-.7-1-1.5-2.8-2.3h.2 0 .2 0 .2c.6 0 1.6.1 2.3 1.1.3.4.4.1.5 0s.6-.7 1.4-.4h0 0l-.2.1v.1l-.1.1c-.3.4-.7 1.3-.3 2.5h.2 0 .1 0l.2-.1h.1l.2-.1c.9-.5 2.3-1.5 2.3-3.7 0-2-1.4-3.5-2.8-4.8l-.4-.4h0l-.8-.7-.2-.2-.3-.3c-.2-.1-.3-.3-.4-.4l-.1-.1c-.2-.2-.4-.5-.6-.7l-.9-.9c-1-1-1.9-2.1-2.1-3.7L35 12h0-.1c-.3-.2-1.1-.6-1.1-1.9 0-.8.5-1.6 1-2.2l.2-.3h0l.2-.2.1-.1.2-.2h0l.2-.1h0l.1-.1h0 .1 0V7l-.1.5h0l-.1.2c-.1.4-.1.9.3.9.6 0 1.9-1.5 1.9-1.8 0-.1.1 0 .1.1V7h0v.2h0v.2h0l-.1.2c-.1.3-.2.6-.4.8l-.1.1c-.1.2-.3.3-.4.5l-.6.7c-.3.4-.6.7-.3 1 .3.4 1-.1 1.4-.5l.1-.2.1-.1v-.1c0-.1.1-.1 0 0v.1h0v.2h0l-.1.2v.1l-.1.2c-.2.5-.6 1.1-1.2 1.4h0 0v.1h0v.1h0v.1h0v.1h0v.1h0v.1h0v.1h0l.1.1h0l.1.2h0l.1.2s0 .1.1.1l.1.2h0l.2.2h0l.2.2.1.1.2.3h0l.3.3h0l.3.3c-.2.1-.1.1-.1.2l.3.3h0l.4.4h0l.4.4h0l.5.4h0l.5.4h0l.4.4h0l.6.5h0l.5.4h0l.5.4h0l.5.5h0l.1.1h0 0 .1c.1-.1.2-.2.2-.5v-.1c0-.6.2-1.2.5-1.4v.4h0v.3h0v.5h0v.4c0 .8.1 1.7.4 1.9.3.1.4-.2.4-.6.1-.4.4-.8.5-.7l-.1.3h0l-.1.4h0v.3h0v.3c-.1.8-.1 1.6.4 1.9.1 0 .1 0 .2-.1l.1-.1c.1-.2.4-.3.9-.1l-.1-.4h0l-.1.1c-.4.2-1 .9-.9 1.9.1 1.4-1.2 5-4.5 5.5v.1h0v.1h0l-.1.2h0l-.1.1h0l-.1.2h0l-.1.2c-.5.9-1.5 2.2-4 1.9l.2.2h0l.2.2h0l.3.3h0l.2.3h0l.2.3c0 .1.1.1.1.2l.2.3c.9 1.3 1.8 3.2 1.7 5.3l-.1-.2h0l-.1-.4h0l-.2-.5h0l-.2-.5h0l-.2-.3c0-.1-.1-.1-.1-.2l-.2-.3h0l-.2-.4h0l-.2-.4h0l-.3-.4h0l-.3-.4c-.2-.4-.5-.7-.8-1.1l-.4-.4c-1-1.2-2.2-2.3-3.6-3.1l-.3-.2h0 0c-.1 0-.2.1-.1.5.1.5-.3 1.6-.6 2.1 0 .1-.1.1-.1.3v.2.1.2h0v.3.1.3h0v.3c.2 1.7 1.1 4 3.9 4.8.5.1.9.1 1.3.1h.2 0 .2 0l.2-.1h0v.1h0l-.1.1h0l-.1.1h0l.1-.2c-.4.3-1.1.7-2.5.7-.6 0-.6.9.3.9v.1.2h0v.2.1l-.1.3h0l-.2.6h0l-.1.4h0l-.1.4h0l-.1.4h0l-.2.4h0l-.2.4h0l-.2.4c0 .1-.1.1-.1.2l-.2.4c-.4.9-.9 1.7-1.4 2.2-.3.2-.1.3 0 .4h.1 0 .1c.1 0 .2.1.4.2l.2.1s.1 0 .1.1l.2.1c.1.1.2.1.3.2h-.1c-.2 0-.4 0-.4.1h0 0v.6c-.1.3-.2.7-.8.7-.8 0-1-.8-1-1.2s-.4-.4-.6-.4c-.1 0-.7.2-.9.9l-.1.3c-.1.7-.4 1.3-1 1.3-.7 0-.9-.5-.9-.9 0-.1 0-.1-.1-.1h-.1c-.1 0-.3 0-.5-.1l.3-.2h0l.2-.1h0l.3-.2h0l.3-.2c.5-.4.9-.8.8-1-.2-.5-.5-.4-.7-.2h0 0l-.1.1h0l-.2.1c-.3.2-.8.5-1.2.6-.6.1-.9-.7-.6-1.3l.1-.1c.1-.1 0-.1-.1-.2l-.2-.1c-.1-.1-.2-.1-.3-.2h.4 0 .4 0 .3c.8 0 1.7 0 1.7-.4-.1-.6-.6-.6-.9-.5s-1.2 0-1.2-.6c0-.1.1-.2.1-.3l.1-.2c.1-.1.1-.2.1-.3s-.1-.2-.2-.3l-.1-.1h.1.1.2c.2 0 .5 0 .8.1.2.1.4.2.6.5l.4.4c.4.4.9.9 1.3.9.8 0 1.5-1.2 1.5-3.6v-.9h0v-.4h0v-.3h0v-.3h0V41c-.1-.4-.1-.6-.3-.7l-.1-.1h0l-.2-.1h0l-.1-.1h0s-.1-.1-.1-.2v-.2c0-.1 0-.3-.2-.4-.3-.1-.7.3-.8 1.9v.4.2.5h0v.5h0l-.1.3h0l-.1-.2h0l-.1-.2v-.1l-.1-.3h0l-.1-.3c-.1-.4-.2-.8-.2-1.3v-.3-.5c0-.2 0-.3-.1-.4 0 0-.1 0-.2.1l-.1.1h0l-.3.3c-.3.3-.7.7-1.2.9l.1-.2h0l.1-.2h0l.1-.2c.2-.4.4-1 .4-1.5 0-.1 0-.2-.1-.3v-.1l.1-.3h0l-.2-.2h0l-.1-.1c-.3-.4-.7-1.2-.7-3.3 0-.7.1-1.2.2-1.6l.1-.3c.1-.4.2-.8.2-1.4 0-.7-.8-1.5-1.7-2.3l-.4-.3h0l-.4-.3h0l-.2-.2h0l-1.3-.9h0l-.4-.3h0l-.4-.3-.2-.2-.5-.4h0l-.3-.3h0l-.3-.3h0l-.3-.3h0l-.2-.2h0l-.1-.1v-.1c-.1-.1.1-.3.2-.5l.6-.7h0l.2-.3c.3-.4.5-.8.2-1-.4-.3-.6-.1-.9.3l-.1.2h0l-.2.4c0 .1-.1.1-.1.2-.4.6-1.1 1.2-1.4 1.4-.1 0-.1-.1-.1-.3v-.8h0v-.3c0-.5-.1-1-.4-1-.7 0-.8.7-.7 1v.1c0 .1 0 .1-.2.1h-.2c-.3 0-.6.1-.9.4l-.1.2s0 .1-.1.1l-.1.2c-.2.4-.5.9-.6 1.7v-.1h0v-.1a2.85 2.85 0 0 1 0-1.6l.1-.2c0-.1 0-.1-.2-.1H15h-.1-.2 0-.3 0-.4 0l-.4.1h0l-.4.1h0l-.7.1h0l-1 .2c-.1 0-.2 0-.3.1-.3.1-.4.2-.4.7v.4h0v.4h0v.4.9c0 .1-.1 0-.1-.1v-.1h0V27h0v-.1h0-.1-.1 0-.2c-.4.1-1 .1-1-.5 0-.5.1-.6.3-.7l.1-.1c.1-.1.2-.1.2-.3 0-.6-.4-.9-.9-.9-.3 0-.5.2-.7.4l-.2.2c-.3.3-.6.6-1 .6-.9 0-1-.6-1-.9s.1-.4.1-.6-.2-.4-.4-.4c-.1 0 .1-.1.4-.1h.1 0l.6.1c.7.1 1.6 0 1.6-.6 0-.2-.2-.3-.4-.2h-.3-.2l-.4-.1c-.5-.1-1.2-.3-1.2-1.1 0-.4.4-.6.6-.7h.1 0 0c0-.1.1-.3.1-.5 0-.1 0-.1.2 0v-.2h0l.2.1h0l.3.2h0l.4.4h0l.3.3h0l.1.1.1.1c.2.3.5.2.6.1h.1c.1-.1.3-.4-.2-.7-.6-.3-.6-.6-.6-1.1 0-.4.3-.5.5-.6h.1c.1 0 .2-.4.1-.6v-.1c-.1-.3.7.4 1.1 1.2 0 .1.1.2.1.3v.5c0 .5.1.9.7 1.2h.2 0 .1 0 .1.1.1.1l.2-.1h0l.3-.1s.1 0 .2-.1l.2-.1h0l.6-.2h0l1.8-.7h0l2.8-1c.2-.1.6-.3.4-.6-.2-.4-.9-.5-1.9.2l-.1.1c-.2.2-.3.1-.2-.1l.1-.1h0l.1-.2s0-.1.1-.1l.1-.2s0-.1.1-.1l.2-.2c.1-.1.1-.2.2-.2l.2-.2c.7-.9 1.8-1.8 2.8-1.8.4 0 .5-.2.5-.4v-.1c0-.2-.2-.4-.9-.4-.9 0-2.1.9-2.6 1.8h-.2l-.3-.2c-.2-.2-.6-.3-1.1-.3-.6 0-1 .1-1.3.1l-.2.1h0-.2-.1c-.2 0 .5-1 1.7-1 .2 0 .2-.3-.2-.6l-.1-.1c-.2-.1-.5-.5-.8-.8l-.3-.4h0l-.6-.8-.2-.2c-.2-.2-.4.1-.7.6l-.1.2h0l-.1.3h0l-.1.3h0l-.1.3c0 .1-.1 0-.1-.1v-.1h0V14v-.1c0-.1-.1-.1-.1-.1l-.2-.1c-.3-.1-.6-.3-.6-.9 0-.7.4-.8.8-.7h.1 0l.2.1h.1c.4.1.8-.4.7-.8-.7-.4-1.1-.9-1.7-.9h-.1c-.7.1-1.7-.4-1.7-1.2 0-.4.2-.6.4-.7l.2-.1h.1c.1-.1.1-.5.1-.6h.1l.1.1h0l.2.1h0l.2.2h0l.2.2.1.1.2.2.2.2.3.3c.3.3.4.4.6.3s.3-.6-.4-1.2-.6-1.3-.3-1.7h.2.3c.3 0 .6 0 .7-.2 0-.2.1-.1.1 0v.1h0v.2h0l.1.2h0v.4h0v.4h0l.1.2v.1.2c0 .6.2.7.4.7s.4-.1.3-1c-.1-.8.1-1 .3-1.1l.1-.1h0c.2-.1.5-.1.7.1s.6-.1.6-.4v.1h0v.1h0v.2c.1.3.1.7-.2 1.1-.1.1-.1.2-.2.2l-.4.4c-.4.4-.7.9-.3 1.7l.1.2 4 4.1h0c.1 0 .2-.1 0-.3-.2-.3-.2-.6 0-.8v-.1l.1.1h0l.2.1h0l.2.1s.1 0 .1.1l.2.1c.7.3 1.7.6 3.2.4 2.7-.3 3.8-2.2 3.4-2.6l.2.1h0l-.2.2-.1.1-.2.2c-.5.3-1.1.7-1.7.7-1.1 0-1.7-1.1-1.5-1.8v-.1l.1.1h0l.1.1c.2.2.7.5 1.3.5.9 0 1.9-1.1 1.7-1.7 0-.1-.1-.1-.3 0L25 10h0l-1 .3h0l-.4.1c-.1 0-.1 0-.2.1l-.4.1c-.7.2-1.7.3-2.7.3-3.2 0-3.7-3.2-1.4-4.5l-.1.1h0l-.1.2h0v.1h0V7h0v.2h0v.2h0v.2c-.2 1.1.1 2.5 2.7 2.5.5 0 1 0 1.4-.1l.4-.1c.1 0 .3 0 .4-.1l.4-.1h0l.3-.1h0l.3-.1h0l.2-.1h0l.2-.1h0l.3-.1h0v-.1h0V9c-.1-.3-.5-1-1.4-1s-1.3.7-1.5 1l-.1.1h0v.1h0l-.1-.1h0l-.2.2c-.3-.2-.8-.8-.6-1.5 0-.1.1-.1.2-.1h.2 0 .2c.3-.1.6-.2.6-.6 0-.2-.1-.3-.2-.3h-.1 0c-.1 0-.2.1-.3.2l-.1.2c-.1.1-.1.2-.3.2-.4 0-.4-1.2.4-1.2h.1c.2 0 .5 0 .6-.2v-.1c0-.3.7-.6 2.2-.7h.5.8c1.1 0 1.8.2 2.2.3l.2.1h0l.1.1h0l.1.1h0l.1.1h0 0 0v-.1c.1-.4.4-.9 1.1-.9zm-10.6 23h1.3 0 .9 0 .6 0 .4 0 .3 0 .2 0 .1 0 .1 0 0 0c.1 0 .1.1.1.2v.1a.37.37 0 0 0 .3.4c.4.1 1.6 1.1 1.6 1.6a.76.76 0 0 1-.2.4l-.3.4c-.1.2-.2.4 0 .8.5.7.9.7 1.2.7h0-.1-.1l-.1.1c-.3.1-.9.2-1.8.2h-.2c-.4 0-.8-.1-1.2-.2l-1.1-.2c-.6-.1-1.1-.2-1.7-.1h-.1 0-.2c-1.1.2-1.8 1.2-1.3 4.4v.3h0 0c0 .1.2.2.6.2.6 0 2.1.7 3 2.2l-.4-.2h0V39h0l-.3-.1h0l-.3-.1c-.8-.4-1.6-.7-1.9-.2-.2.4-.1.7.2.9.1 0-.1.1-.4.2l-.3.1h0l-.5.2h0-.5 0l-1 .3h0l-1.8.5c-.3.1-.4.3.2.7l.1.1h0l.3.2h0l.3.2h0l.1.1c.1.1.2.2.1.2h-.3c-.3 0-.6 0-.6.2s-.1.7-.6.7-.8-.3-.8-.7v-.3h0V42c0-.4-.2-.7-.6-.7-.6 0-1 .6-1 1.7 0 .8-.8 1-1.1 1s-.6-.1-.6-.6c0-.1-.2-.1-.4-.1h-.2 0c-.1 0 0-.1.2-.3l.2-.1h0l.3-.2h0l.3-.2h0l.6-.5h0c.2-.1.2-.5.1-.6l-.1-.1c-.2-.1-.4-.2-.8.1-.4.4-.9.7-1.3.7s-.8-.4-.8-.8v-.1h0v-.4c0-.2 0-.5-.3-.6l-.1-.1c-.1-.1-.1-.1.1-.1H8h0 .7 0 .8 0 .3 0 .3c.4 0 .8-.1.8-.2 0-.5-.5-.6-.7-.6h-.3c-.5 0-1.2 0-1.2-.7 0-.2.1-.3.2-.4H9c0-.1.1-.1.1-.2 0-.2-.3-.2-.4-.2h0 0l.1-.1h0l.1-.1c.3-.1.9-.3 1.5.2l.4.4.2.3h0l.2.3c.3.4.6.7 1.1.7h.2c1-.1 3.4-1 3.4-3.7 0-.8-.2-1.5-.4-2.1l-.1-.3h0l-.1-.3h0l-.3-.6v-.1c0-.1 0-.1.1-.1h.2c.2 0 .5-.1.5-.5 0-.8-4.8-.9-6.3.6v-.1h0v-.1h0V32v-.1l.1-.2c.3-.5 1-1.2 2.6-1.2.4 0 .7.1.9.1l.3.1a1.1 1.1 0 0 0 .8 0c.1 0 .1-.1 0-.2l-.4-.5c-.3-.3-.6-.6-.5-1.2l.1.1c.3.3 1 .9 1.8.9.1 0 .1 0 .2-.1l.1-.1h0l.2-.3h0l.2-.2h0l.2-.2c.6-.4 1.6-1 3.3-1zm4.9-6c-.2 0-.4.1-.4.3v.1h0v.1h0v.1s0 .1-.1.1l-.1.2h0l-.1.2a3.71 3.71 0 0 1-1.6 1.3c-.1.1-.2.3-.1.5.1.1.2.2.4.2h0 .1c1.3-.6 1.9-1.4 2.1-2l.1-.2v-.1-.1h0v-.2h0v-.1h0c0-.2-.1-.4-.3-.4zm2.8-.2h0c-.2 0-.3.1-.4.3v.2h0v.1h0v.1c-.1.5-.4 1.4-1.5 2-.1.1-.2.3-.1.5.1.1.2.2.4.2h0 .1c1.2-.6 1.7-1.6 1.9-2.3v-.2-.1-.2h0v-.1h0v-.1c-.1-.3-.2-.4-.4-.4zm-4.5-4.6c-.1.2 0 .4.1.6l.1.1c.1.1.4.4.5.8.2.7 0 1.7-.6 2.7-.1.1-.1.4.1.5.1.1.1.1.2.1a.76.76 0 0 0 .4-.2c.7-1.2 1-2.3.8-3.2v-.2c-.1-.6-.5-.9-.7-1.1l-.1-.1h0l-.3-.1h0c-.2-.1-.5-.1-.5.1zm-1.9.3l-.2.1h0l-.1.1h0l-.1.1h0l-.2.2c-.5.5-1 1.4-1.2 2.9 0 .2.1.4.3.4h.1.1c.1 0 .3-.1.4-.3v-.1c.1-1.4.7-2.2 1.1-2.6l.1-.1.1-.1h0 0c.2-.1.2-.4.1-.5s-.3-.1-.5-.1zm4.7-2.6c-.1.2-.1.4.1.5l.1.1h0l.1.1h0l.1.1v.1l.1.1c.3.5.6 1.3.3 2.8l-.1.3c-.1.2 0 .3.2.4h.1.1c.1 0 .3-.1.4-.3.5-2.2-.2-3.4-.6-3.9l-.1-.1h0l-.1-.1h0l-.1-.2h0l-.1-.1h0c-.2 0-.4 0-.5.2zm15.9-8.2h0 0 0l.2.4h0l.1.2c.3.6.9 1.3 1.5 1.2.2 0 .2-.3.1-.6l-.1-.4h0l-.1-.2h0V7v-.2l.2.2h0l.2.2h0l.2.2c.3.3.6.6.9.8.6.4.7 1.6.4 2.3-.3.5-.8 1-.9 1.5v.1c-.1.3-.3.7-.6 1.3l-.2.4c-.2.3-.3.5-.6.8l-.4.4c-.3.4-.7.8-1.1 1.2l-.2.2-1-.9.3-.3h0l.3-.3h0l.3-.3.1-.1.3-.3h0l.3-.3c.7-.8 1.3-1.6 1.2-2.2h-.1 0l-.1-.1h-.1l-.2-.1c-.4-.3-1-.9-.9-1.8l.1.2.1.1.1.2c.3.4.8.8 1.1.5.5-.3.1-1.1-.5-1.7l-.2-.2h0v-.3l-.1-.1c-.4-.4-.6-1-.6-1.4v-.2h0v-.2h0zM27.1 9.9c-.1.2 0 .4.2.5 1.1.4 2.1 1 2.2 1.3h-.1-.1-.1-.1-.2-.1-.3 0-.5a.76.76 0 0 0-.4.2c-.1.1 0 .2 0 .4l.1.2h0l.1.1h0v.1.1.2.1.2.1.3c0 .4 0 .9-.1 1.4 0 .2.1.3.4.4h.1.1c.1 0 .3-.2.3-.4v-.5-.5-.2-.4c0-.5-.1-.8-.2-1.1.6 0 1.1-.1 1.4-.4.1-.1.2-.3.2-.5 0-.7-1-1.3-1.8-1.7l-.3-.1h0l-.3-.1h0l-.2-.1h-.1c.1.1-.1.2-.2.4zM26.2 6h-1.8c-.3 0-.3.1-.4.2h0 0c0 .2.1.3.1.4l.1.1h1 .1c.1 0 .3 0 .3.1s-.3.2-.6.3h-.2 0-.3 0l.1.1c.1.2.3.3.7.3.6 0 .8-.5.8-.9v-.1h0v-.1h0 0c.1 0 .4 0 .4-.2.1-.1-.1-.2-.3-.2h0zM25.8.5h0l.3.1h0l.2.2.1.1.3.1c.4.3.8.7.8 1.1 0 .5-.5.7-.8.8h-.1 0 0 0c.2.5.6.7.8.8h.1.8c.6 0 .6-.5.6-.7v-.2h-.1c-.2 0-.6-.2-.6-.6 0-.5.7-.9 1.4-1.1l.2-.1h0l.2-.1h0l.3-.1-.2.8H30c-.2 0-.4.2-.4.5 0 .1.1.2.2.3h.1l-.6 2h-6.6l-.5-1.9c.1-.1.3-.2.3-.4 0-.3-.2-.5-.4-.5H22l-.3-.9c.6.1 2.1.7 2.1 1.4 0 .5-.4.7-.6.7h-.1 0c0 .6.4.8.6.8h.1 0 .1.9c.5 0 .6-.6.6-.8v-.1h0-.1 0-.2c-.3-.1-.6-.2-.6-.5 0-.5.4-.9.8-1.3l.2-.2h0l.2-.2h0 .1 0zm.2 1.2a.47.47 0 0 0-.5.5.47.47 0 0 0 .5.5.47.47 0 0 0 .5-.5.47.47 0 0 0-.5-.5z"/></svg></i>
+                        <span>Správa připojených zařízení v Portálu občana</span>
+                        <i class="fa font-14 fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+        <div class="d-flex flex-column" style="margin: 0px 16px 30px 16px;">
+            <span class="opacity-50 mb-2">
+                V Portálu občana můžete zobrazit, blokovat a odebrat všechna mobilní zařízení, ve kterých máte eDoklady aktivní.
+            </span>
+            <div class="card card-style" style="box-shadow:none!important;background-color:transparent!important;">
+                <div class="content my-0">
+                    <div class="d-flex align-items-center justify-content-center" style="padding-top:28px;padding-bottom:28px;">
+                        <span style="font-family:'Spline Sans Mono',monospace;line-height:1.2;color:black;font-weight:800;">
+                            DIGITÁLNÍ<br/> A INFORMAČNÍ<br/> AGENTURA_
+                        </span>
+                        <img src="https://nakit.cz/img/nakit_logo_pos_color.png" class="ml-3" style="max-width:128px;margin-left:20px;"/>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <span class="opacity-50">Verze aplikace: 1.0.2 (2401211)</span>
+        </div>
+
+
+
+
+    </div>
+    <!-- End of Page Content-->
+
+    <!-- trigger unregister <div class="page-content"> -->
+    <div id="menu-unregister" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title mt-0 pt-0"><h1>Settings</h1><p class="color-highlight">Flexible and Easy to Use</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+            <div class="list-group list-custom-small">
+                <a href="#" data-toggle-theme data-trigger-switch="switch-dark-mode" class="pb-2 ms-n1">
+                    <i class="fa font-12 fa-moon rounded-s bg-highlight color-white me-3"></i>
+                    <span>Dark Mode</span>
+                    <div class="custom-control scale-switch ios-switch">
+                        <input data-toggle-theme type="checkbox" class="ios-input" id="switch-dark-mode">
+                        <label class="custom-control-label" for="switch-dark-mode"></label>
+                    </div>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+            <div class="list-group list-custom-large">
+                <a data-menu="menu-highlights" href="#">
+                    <i class="fa font-14 fa-tint bg-green-dark rounded-s"></i>
+                    <span>Page Highlight</span>
+                    <strong>16 Colors Highlights Included</strong>
+                    <span class="badge bg-highlight color-white">HOT</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                <a data-menu="menu-backgrounds" href="#" class="border-0">
+                    <i class="fa font-14 fa-cog bg-blue-dark rounded-s"></i>
+                    <span>Background Color</span>
+                    <strong>10 Page Gradients Included</strong>
+                    <span class="badge bg-highlight color-white">NEW</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .rounded-circle-btn{border-radius:50%!important;text-align:center;width:50px;height:50px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin:0px 0px 7px 0px!important;}
+    .rounded-circle-btn span{width:100%;text-align:center;}
+    .nullmar{margin-bottom:0!important;--bs-gutter-x:0.5rem!important;flex-wrap:wrap;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;}
+    #pin{font-size:27px!important;text-align:center;padding-left:15px;width:97%;color:#212529;background-color:#fff;border-color:#a5a5a5!important;outline:0;box-shadow:0 0 0 0.25rem rgba(13,110,253,0.25);}
+    </style>
+    <!-- Duplicate this and create a unique ID to create more settings panels -->
+    <div id="settings-changepin" class="menu menu-bg menu-box-right" data-menu-width="cover" data-menu-effect="menu-push-full">
+
+        <div class="card card-style mt-3 pb-2">
+            <a href="#" class="close-menu header-icon header-icon-1"><i class="fas fa-arrow-left"></i></a>
+            <div class="menu-title">
+                <h1 class="font-20" style="text-align:center;font-size:19px;padding:20px 0px 3px 0px!important;" id="pin_head">Zadejte PIN</h1>
+            </div>
+        </div>
+
+        <div class="card card-style mt-4" style="padding-left:27px!important;margin:0!important;">
+            <input type="password" class="form-control" id="pin">
+            <div>
+                <div class="d-flex align-items-center justify-content-center pt-2" style="font-size:10px;" id="pin_message"><span>! Zadejte 4-8 číslic, pro větší bezpečnost doporučujeme min. 6</span></div>
+            </div>
+            <div id="error_pin" style="display:none;">
+                <div class="d-flex align-items-center justify-content-center pt-2"><div style="color:#9e3412;font-weight:400;"><img src="images/dialog_error.png" style="width:13px;" /> Chybně zadaný PIN, zadejte znovu</div></div>
+                <div class="d-flex align-items-center justify-content-center"><div style="color:#9e3412;font-weight:800;">Počet zbývajících pokusů: <a id="pokusy">2</a></div></div>
+            </div>
+        </div>
+
+
+        <div style="position:fixed;bottom:0px;left:0px;right:0px;">
+            <div class="card card-style mt-3">
+                <div class="content" style="margin:20px 15px 20px 60px!important;">
+                    <div class="nullmar">
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('1')"><span>1</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('2')"><span>2</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('3')"><span>3</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('4')"><span>4</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('5')"><span>5</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('6')"><span>6</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('7')"><span>7</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('8')"><span>8</span></button></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('9')"><span>9</span></button></div>
+                        <div class="col-4"><!--EMPTY SPACE--></div>
+                        <div class="col-4"><button class="rounded-circle-btn preload-img shadow-s rounded-s entered" onclick="i('0')"><span>0</span></button></div>
+                        <div class="col-4">
+                            <button class="rounded-circle-btn preload-img shadow-s rounded-s entered opacity-50" onclick="i('r')">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="max-width:22%;fill:grey;">
+                                    <path d="M544 128c0-17.7-14.3-32-32-32H205.3c-8.5 0-16.6 3.4-22.6 9.4L32 256 182.6 406.6c6 6 14.1 9.4 22.6 9.4H512c17.7 0 32-14.3 32-32V128zM512 64c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H205.3c-17 0-33.3-6.7-45.3-18.7L9.4 278.6c-6-6-9.4-14.1-9.4-22.6s3.4-16.6 9.4-22.6L160 82.7c12-12 28.3-18.7 45.3-18.7H512zM427.3 180.7c6.2 6.2 6.2 16.4 0 22.6L374.6 256l52.7 52.7c6.2 6.2 6.2 16.4 0 22.6s-16.4 6.2-22.6 0L352 278.6l-52.7 52.7c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6L329.4 256l-52.7-52.7c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L352 233.4l52.7-52.7c6.2-6.2 16.4-6.2 22.6 0z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <a href="#" class="close-menu" style="display:none!important;" id="close_pin_verify"></a>
+            <a href="#" data-toast="close_pin_verify_snackbar" style="display:none!important;" id="close_pin_verify_snackbar_trigger"></a>
+            <a href="#" class="btn btn-full btn-m mt-4 me-3 ms-3 mb-4 bg-highlight font-900 text-uppercase" onclick="pin_verify();">Pokračovat</a>
+        </div>
+    </div>
+
+    <div id="close_pin_verify_snackbar" class="snackbar-toast rounded-m bg-green-dark fade hide" data-bs-delay="1500" data-bs-autohide="true"><i class="fa fa-check me-3"></i>PIN aktualizován!</div>
+
+    <div id="settings-unregister" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title mt-0 pt-0"><h1 style="line-height:1.2;text-align:center;font-size:15px;padding: 19px 26px 3px 20px!important;">Opravdu si přejete zrušit registraci tohoto zařízení?</h1><a href="#" class="close-menu" style="color: black;"><i class="fa fa-times"></i></a></div>
+        <div class="card card-style mt-4" style="border-radius:0px;">
+            <div class="d-flex align-items-center justify-content-center" style="padding-bottom:28px;">
+                <span style="line-height:1.2;color:black;text-align:center;">V tomto zařízení se nadále nebudete moci přihlašovat do eDokladů jako občan. Profil občana zprovozníte novou registrací.</span>
+            </div>
+            <a href="#" class="btn btn-full btn-l text-uppercase font-700" onclick="unregister();" style="background-color:#7b000d;color:#FFF!important;">Ano, zrušit</a>
+            <a href="#" class="close-menu btn btn-full btn-l text-uppercase font-700">Nerušit</a>
+        </div>
+    </div>
+    <!-- Menu Settings Highlights-->
+    <div id="menu-highlights" class="menu menu-box-bottom menu-box-detached">
+        <div class="menu-title"><h1>Highlights</h1><p class="color-highlight">Any Element can have a Highlight Color</p><a href="#" class="close-menu"><i class="fa fa-times"></i></a></div>
+        <div class="divider divider-margins mb-n2"></div>
+        <div class="content">
+            <div class="highlight-changer">
+                <a href="#" id="apply_default" data-change-highlight="blue"><i class="fa fa-circle color-blue-dark"></i><span class="color-blue-light">Základní</span></a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="cordova_plugins.js"></script>
+<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="scripts/custom.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',onPageLoaded,false);
+var pin_tried = 3;
+function onPageLoaded(){document.getElementById('apply_default').click();document.getElementById('profile_name').innerText = localStorage.getItem('given_name') + " "+localStorage.getItem('family_name');
+    const FINGERPRINT=localStorage.getItem('FINGERPRINT');
+    if (FINGERPRINT && FINGERPRINT == "yes"){
+        document.getElementById('switch-bio').checked = true
+    }
+} // "apply_default" idk from old app (^_^)
+
+function biometrics(){
+    var checkbox = document.getElementById('switch-bio');
+    Fingerprint.show({
+        title: 'Povolit přihlašování?',
+    }, (result) => {
+        if (checkbox.checked){
+            checkbox.checked = true;
+            localStorage.setItem('FINGERPRINT', "yes");
+        } else {
+            checkbox.checked = false;
+            localStorage.setItem('FINGERPRINT', "no");
+        }
+        console.log("FINGERPRINT ÚSPĚCH");
+    }, (error) => {
+        console.error("FINGERPRINT ERROR");
+    });
+}
+var pinstage = 0;
+var new_pin = "";
+var new_pin_again = "";
+function pin_verify(){
+    const pin=localStorage.getItem('pin');
+    var error_pin = document.getElementById('error_pin');
+    var pin_head = document.getElementById('pin_head');
+    var pokusy = document.getElementById('pokusy');
+
+    if (pinstage == 0){
+        var pin_input = document.getElementById('pin').value;
+        if (pin == pin_input){
+            document.getElementById('pin').value = "";
+            error_pin.style.display = 'none';
+            pin_tried = 3;
+            pokusy.innerText = pin_tried;
+            pin_head.innerText = "Vytvořte PIN. Příště bude stačit k přihlášení." 
+            pinstage = 1;
+        } else {
+            document.getElementById('pin').value = "";
+            pin_tried = pin_tried-1;
+            pokusy.innerText = pin_tried;
+            if (pin_tried == 0){
+                unregister();
+            } else {
+                error_pin.style.display = 'block';
+            }
+        }
+    } else {
+        if (pinstage == 2){
+            new_pin_again = document.getElementById('pin').value;
+            document.getElementById('pin').value = "";
+            if (new_pin == new_pin_again){
+                localStorage.setItem('pin', new_pin);
+                document.getElementById('close_pin_verify').click();
+                document.getElementById('close_pin_verify_snackbar_trigger').click();
+            } else {
+                document.getElementById('pin_message').innerHTML = `<span>! PINy se neshodují</span>`; // `(new_pin:${new_pin} new_pin_again:${new_pin_again})`
+                document.getElementById('pin_message').style.display = 'block';
+            }
+            pinstage = 0;
+        }
+        if (pinstage == 1){
+            new_pin = document.getElementById('pin').value;
+            document.getElementById('pin').value = "";
+            pin_head.innerText = "Pro kontrolu zadejte přihlašovací PIN znovu";
+            pinstage = 2;
+        }
+    }
+        
+        /*document.getElementById('close_pin_verify').click();*/
+}
+
+function unregister(){
+    localStorage.clear();
+    window.location.href = 'index.html?logout';
+}
+function logout(){
+    window.location.href = 'index.html?logout';
+}
+function i(value){
+    var pin=document.getElementById('pin');
+    if(value=="r"){pin.value=pin.value.slice(0,-1);}else{pin.value=pin.value+value;}
+}
+function openWeb(uri){
+  const webWindow=cordova.InAppBrowser.open(uri,'_blank','location=yes,toolbar=yes');
+    /*webWindow.addEventListener('loadstop', (event) => { /*{do nothing}*/ /*});*/ // Listen when something.. ¯\_(ツ)_/¯
+}
+</script>
+</body>
